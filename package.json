@@ -5,17 +5,14 @@
   "main": "build/electron.js",
   "homepage": "./",
   "dependencies": {
-    "@testing-library/jest-dom": "5.11.4",
-    "@testing-library/react": "11.0.4",
-    "@testing-library/user-event": "12.1.7",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-scripts": "3.4.3"
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-scripts": "4.0.0"
   },
   "scripts": {
     "start": "run-p start:react start:electron",
     "start:react": "cross-env BROWSER=none react-scripts start",
-    "start:electron": "wait-on http-get://localhost:3000/ && cross-env NODE_ENV=development electron ./electron/index.js",
+    "start:electron": "wait-on http-get://localhost:3000/ && cross-env NODE_ENV=development electron ./src/electron/electron.js",
     "build": "node ./scripts/build.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -36,13 +33,16 @@
     ]
   },
   "devDependencies": {
-    "cross-env": "6.0.3",
-    "electron": "10.1.3",
-    "electron-builder": "22.8.1",
+    "cross-env": "7.0.2",
+    "electron": "10.1.5",
+    "electron-builder": "22.9.1",
     "electron-reload": "1.5.0",
     "npm-run-all": "4.1.5",
-    "shelljs": "^0.8.4",
-    "wait-on": "5.2.0"
+    "shelljs": "0.8.4",
+    "wait-on": "5.2.0",
+    "@testing-library/jest-dom": "5.11.6",
+    "@testing-library/react": "11.1.2",
+    "@testing-library/user-event": "12.2.2"
   },
   "postinstall": "electron-builder install-app-deps"
 }
