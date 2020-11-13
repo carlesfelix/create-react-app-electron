@@ -4,6 +4,13 @@ const url = require('url');
 
 let win = null;
 const devEnvironment = process.env.NODE_ENV === 'development';
+
+if (devEnvironment) {
+  require('electron-reload')('../', {
+    electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
+    hardResetMethod: 'exit'
+  });
+}
 function createWindow() {
   const electronScreen = screen;
   const size = electronScreen.getPrimaryDisplay().workAreaSize;
@@ -20,7 +27,6 @@ function createWindow() {
     },
   });
   if (devEnvironment) {
-    require('electron-reload')(__dirname);
     win.loadURL('http://localhost:3000');
   } else {
     win.loadURL(url.format({
