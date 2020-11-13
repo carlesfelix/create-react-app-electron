@@ -15,8 +15,8 @@ function createWindow() {
     width: size.width,
     height: size.height,
     webPreferences: {
-      nodeIntegration: true,
-      allowRunningInsecureContent: (devEnvironment) ? true : false
+      allowRunningInsecureContent: devEnvironment,
+      preload: path.join(__dirname, './preload.js')
     },
   });
   if (devEnvironment) {
