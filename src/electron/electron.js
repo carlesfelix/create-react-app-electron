@@ -6,7 +6,7 @@ let win = null;
 const devEnvironment = process.env.NODE_ENV === 'development';
 
 if (devEnvironment) {
-  require('electron-reload')('../', {
+  require('electron-reload')(__dirname, {
     electron: path.join(__dirname, 'node_modules', '.bin', 'electron'),
     hardResetMethod: 'exit'
   });
