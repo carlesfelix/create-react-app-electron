@@ -1,5 +1,8 @@
 {
   "productName": "react-electron",
+  "electronDownload": {
+    "cache": "./.electron-cache"
+  },
   "directories": {
     "output": "release/"
   },
